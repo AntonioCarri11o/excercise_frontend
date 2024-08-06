@@ -1,4 +1,5 @@
 import 'package:execrcise_frontend/data/repository/vehicle_repository.dart';
+import 'package:execrcise_frontend/presentations/screens/update_vehicle_screen.dart';
 import 'package:execrcise_frontend/presentations/screens/vehicles_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,12 +24,16 @@ class MyApp extends StatelessWidget {
           )
         ],
         child: MaterialApp(
-          title: 'alamare',
+          title: 'Excercise',
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          home: const VehiclesView()
+          initialRoute: '/',
+          routes: {
+            '/': (context) => VehiclesView(),
+            '/update': (context) => UpdateVehicleScreen()
+          },
         )
     );
   }

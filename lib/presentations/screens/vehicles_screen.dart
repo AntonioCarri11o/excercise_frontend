@@ -46,13 +46,12 @@ class VehiclesScreen extends StatelessWidget {
                   return ListTile(
                     title: Text(vehicle.modelo),
                     subtitle: Text(vehicle.marca),
+                    onTap: (){
+                      Navigator.pushNamed(context, '/update', arguments: vehicle);
+                    },
                     trailing: Row(
                       mainAxisSize:  MainAxisSize.min,
                       children: <Widget>[
-                        IconButton(
-                          onPressed: (){print('pene');},
-                          icon: Icon(Icons.edit),
-                        ),
                         Material(
                           color: Colors.transparent,
                           child: Center(
